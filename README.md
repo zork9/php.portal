@@ -1,4 +1,4 @@
-php.portal
-==========
+php.hex
+=======
 
-Portal site software written in PHP and eventual CGI scripts
+PHP code for a portal site 
