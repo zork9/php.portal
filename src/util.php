@@ -16,6 +16,15 @@
 -->
 <?php
 
+function idIs($id, $value)
+{
+	if (!strcmp($id, $value)) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
 function printHeader($title, $css)
 {
 	print "<html><head><title>" 
