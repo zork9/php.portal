@@ -26,5 +26,6 @@ function JSEditPost(string postvarname, string frontofpage, string pastofpage)
 	print '<input type="submit" name="submit">';
 	print pastofpage;	
 }
+</script>
 
 ?>
