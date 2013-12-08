@@ -1,4 +1,8 @@
-<!-- 
+<?php 
+
+/* Utilities */ 
+
+/*
  Copyright (C) Johan Ceuppens 2013
 
  This program is free software: you can redistribute it and/or modify
@@ -13,7 +17,9 @@
 
  You should have received a copy of the GNU General Public License
  along with this program.  If not, see <http://www.gnu.org/licenses/>.
--->
+*/
+?>
+
 <?php
 
 function idIs($id, $value)
@@ -27,7 +33,7 @@ function idIs($id, $value)
 
 function printHeader($title, $css)
 {
-	print "<html><head><title>" 
+	echo "<html><head><title>" 
 	. $title 
 	. "</title></head>";
 	### css FIX
@@ -35,17 +41,17 @@ function printHeader($title, $css)
 
 function printBodyInit()
 {
-	print "<body>";	
+	echo "<body>";	
 }
 
 function printBodyClose()
 {
-	print "</body>";	
+	echo "</body>";	
 }
 
 function printBodyAndHTMLClose()
 {
-	print "</body></html>";	
+	echo "</body></html>";	
 }
 
 ?>
