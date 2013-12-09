@@ -21,18 +21,18 @@
 ?>
 
 <?php
-
-include 'include.js.php';
-include 'include.std.php'; 
+include('util.php');
+include('file.php'); 
+include('include.js.php'); 
 
 printHeader("Open Portal");
 
-echo "<script>
+echo '<script>
 	<p onmousedown="JSEditPost()">
 	You can write something here when you click this section
 	</p>
 
-	</script>";
+	</script>';
 
 printBodyAndHTMLClose();
 

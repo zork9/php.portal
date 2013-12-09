@@ -33,25 +33,22 @@ function idIs($id, $value)
 
 function printHeader($title, $css)
 {
-	echo "<html><head><title>" 
-	. $title 
-	. "</title></head>";
-	### css FIX
+	echo "<html><head><title>$title</title></head>"; 
 }
 
 function printBodyInit()
 {
-	echo "<body>";	
+	echo '<body>';	
 }
 
 function printBodyClose()
 {
-	echo "</body>";	
+	echo '</body>';	
 }
 
 function printBodyAndHTMLClose()
 {
-	echo "</body></html>";	
+	echo '</body></html>';	
 }
 
 ?>

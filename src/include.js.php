@@ -23,14 +23,14 @@
 
 <?php
 
-<script>
+echo '<script>;
 function JSEditPost(string postvarname, string frontofpage, string pastofpage)
 {
 	print frontofpage;
-	print '<input type="text" name=' + postvarname + '>';
-	print '<input type="submit" name="submit">';
+	print \'<input type="text" name=\' + postvarname + \'>\';
+	print \'<input type="submit" name="submit">\';
 	print pastofpage;	
 }
-</script>
+</script>';
 
 ?>
