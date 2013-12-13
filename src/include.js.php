@@ -23,14 +23,30 @@
 
 <?php
 
-echo '<script>;
+echo '<script>
 function JSEditPost(string postvarname, string frontofpage, string pastofpage)
 {
-	print frontofpage;
-	print \'<input type="text" name=\' + postvarname + \'>\';
-	print \'<input type="submit" name="submit">\';
-	print pastofpage;	
+	document.write(frontofpage);
+	document.write("<input type=\"text\" name=\"");
+	document.write(postvarname);
+	document.write("\">");
+	document.write("<input type=\"submit\" name=\"submit\">");
+	document.write(pastofpage);	
 }
+
+function JSEditPost2()
+{
+	x = document.getElementById("edit")
+//	document.write("test");
+
+	x.style.color = "#ff0000";
+}
+
+function ChangePostAndEdit(string idstr)
+{
+	document.getElementById(idstr).innerHTML="<input type=\"text\" name=\"currentedit\">";	
+}
+
 </script>';
 
 ?>

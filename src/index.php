@@ -23,17 +23,26 @@
 <?php
 include('util.php');
 include('file.php'); 
-include('include.js.php'); 
 
 printHeader("Open Portal");
+printBodyInit();
 
-echo '<script>
-	<p onmousedown="JSEditPost()">
+//include scripts in body
+include('include.js.php'); 
+
+echo '
+<p onmousedown="JSEditPost()">
 	You can write something here when you click this section
-	</p>
+	</p>';
 
-	</script>';
+//FIX generate id for each post on the webpage
+echo '
+<p id="edit">
+	Edit here
+	<button type="button" onclick="ChangePostAndEdit("edit")">Click</button>
+</p>
 
+';
 printBodyAndHTMLClose();
 
 ?>
