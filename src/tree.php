@@ -33,6 +33,10 @@ class Tree {
 		$nodes->add($node);
 	}	
 
+	public function addNodeRec($node) {
+		//FIX add node to this tree, recursively search for a place	
+	}	
+
 	public function getNode($n) {
 		return $nodes[$n];
 	}

@@ -1,6 +1,6 @@
 <?php
 
-/* C language Parse Tree class */
+/* Scheme language Parse Tree class */
 
 /*
  Copyright (C) Johan Ceuppens 2013
@@ -24,7 +24,7 @@
 include("parsetree.php");
 
 class SchemeParseTree extends ParseTree {
-
+	
 	public function __construct( /* */ ) {
 	}
 
@@ -37,12 +37,27 @@ class SchemeParseTree extends ParseTree {
 	}
 
 	public function schemeparse($linec) {	
-	
+		$i = 0;		
+		$i = skipWhiteSpace($linec, 2);
 		if (strcmp($linec, "(+") >= 0) {
-			schemeadd();
+			$i = skipWhiteSpace($linec, 2);
+			schemeadd(getSubstringN($linec, $i);
 		}	
 	}
 
+	public function schemeadd($line) {
+		$opnd1 = getNextSubString($line);
+		$opnd2 = getNextSubStringN($line, strlen($opnd1));
+
+		$tn = new TreeNode(); 
+		$tn->addData("operand1", $opnd1);
+		
+		$tn2 = new TreeNode(); 
+		$tn2->addData("operand2", $opnd2);
+		
+		$self->addNodeRec("plus", $tn1, $tn2);	
+	}
+	
 }
 
 ?>

@@ -28,6 +28,58 @@ class ParseTree extends Tree {
 	public function __construct( /* */ ) {
 	}
 
+	public skipWhiteSpace($line, $n) {
+		$i = $n;
+		while ($line[$i] == ' ' || $line[$i] == '\t') {
+			$i++;
+		}
+		return $i;
+	}  
+
+	public getSubStringN($line, $n) {
+
+		$returnstr = NULL;
+
+		for ($i = $n; $i < strlen($line); $i++) {
+			$returnstr .= $line[$i];
+		}
+
+		return $returnstr;	
+
+
+	public getNextSubString($line) {
+
+		$returnstr = NULL;
+		$i = skipWhiteSpace($line, 0);
+		for (; $i < strlen($line); $i++) {
+			if ($line[$i] == ' ' || $line[$i] == '\t') {
+				break;
+			$returnstr .= $line[$i];
+		}
+
+		return $returnstr;	
+
+	}
+
+	//utility function with start index
+	public getNextSubStringWithStart($line, $n) {
+		return getNextSubStringN($line, $n);
+	}
+
+	//with start index
+	public getNextSubStringN($line, $n) {
+
+		$returnstr = NULL;
+		$i = skipWhiteSpace($line, 0);
+		for ($i = $n; $i < strlen($line); $i++) {
+			if ($line[$i] == ' ' || $line[$i] == '\t') {
+				break;
+			$returnstr .= $line[$i];
+		}
+		//e.g. return tuple (str, index)
+		return $returnstr;	
+	
+	}
 }
 
 ?>
