@@ -27,6 +27,12 @@ include('file.php');
 printHeader("Open Portal");
 printBodyInit();
 
+$idgen = 0;
+function generateId()
+{
+	$idgen += 1;
+}
+
 //include scripts in body
 include('include.js.php'); 
 
@@ -36,13 +42,25 @@ echo '
 	</p>';
 
 //FIX generate id for each post on the webpage
+//FIX get number (key/id) of post out of a db
 echo '
-<p id="edit">
-	Edit here
-	<button type="button" onclick="ChangePostAndEdit("edit")">Click</button>
-</p>
+<p id=\"';
 
+generateId();
+echo $idgen;
+
+echo '
+"\>
+	Edit here
+	<button type="button" onclick="ChangePostAndEdit("';
+
+echo	"$idgen";
+
+echo '
+")>Click</button>
+</p>
 ';
+
 printBodyAndHTMLClose();
 
 ?>
