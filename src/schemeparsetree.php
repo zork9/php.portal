@@ -36,18 +36,22 @@ class SchemeParseTree extends ParseTree {
 		}
 	}
 
-	public function schemeparse($linec) {	
+	public function schemeparse($linec) {
 		$i = 0;		
-		$i = skipWhiteSpace($linec, 2);
-		if (cmpAndYield("(+", $linec) != "") {
+
+		$i = skipWhiteSpace($linec, $i);
+		$i = searchForOpeningParens($linec);
+		$i = skipWhiteSpace($linec, $i);
+
+		if (cmpAndYield("+", $linec) != "") {
 			$i = skipWhiteSpace($linec, 2);
 			schemeadd(getSubstringN($linec, $i);
 		}	
-		else if (cmpAndYield("(-", $linec) != "") {
+		else if (cmpAndYield("-", $linec) != "") {
 			$i = skipWhiteSpace($linec, 2);
 			schememinus(getSubstringN($linec, $i);
 		}	
-		else if (cmpAndYield("(*", $linec) != "") {
+		else if (cmpAndYield("*", $linec) != "") {
 			$i = skipWhiteSpace($linec, 2);
 			schememul(getSubstringN($linec, $i);
 		}	

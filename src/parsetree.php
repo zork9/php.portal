@@ -36,6 +36,14 @@ class ParseTree extends Tree {
 		return $i;
 	}  
 
+	public function searchForOpeningParens($line, $n) {
+		$i = $n;
+		while ($line[$i] != '(') {
+			$i++;
+		}
+		return $i;
+	}  
+
 	public function getSubStringN($line, $n) {
 
 		$returnstr = NULL;
