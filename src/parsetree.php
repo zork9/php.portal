@@ -44,6 +44,14 @@ class ParseTree extends Tree {
 		return $i;
 	}  
 
+	public function searchForClosingParens($line, $n) {
+		$i = $n;
+		while ($line[$i] != ')') {
+			$i++;
+		}
+		return $i;
+	}  
+
 	public function getSubStringN($line, $n) {
 
 		$returnstr = NULL;

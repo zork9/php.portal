@@ -24,6 +24,8 @@
 include("parsetree.php");
 
 class SchemeParseTree extends ParseTree {
+
+	protected $currentnode = NULL; //NULL node or parent is root
 	
 	public function __construct( /* */ ) {
 	}
@@ -82,13 +84,15 @@ class SchemeParseTree extends ParseTree {
 		$opnd1 = getNextSubString($line);
 		$opnd2 = getNextSubStringN($line, strlen($opnd1));
 
-		$tn = new TreeNode(); 
+		$tn = new TreeNode($currentnode); 
+		$tn->addData("operator", $operstr);
 		$tn->addData("operand1", $opnd1);
-		
-		$tn2 = new TreeNode(); 
-		$tn2->addData("operand2", $opnd2);
-		
-		$self->addNodeRec($operstr, $tn1, $tn2);	
+		$tn->addData("operand2", $opnd2);
+
+		//FIX more opnds for oper, use array for addnoderec function
+		//FIX recursive searching inclusion function, use $currentnode instead, $self->addNodeRec($operstr, $tn1, $tn2);	
+		$currentnode->addNode($tn);
+		//FIX adapt current node hereafter
 	}
 	
 }

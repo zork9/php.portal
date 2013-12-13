@@ -24,22 +24,35 @@
 
 class TreeNode {
 	protected $data = array();
+	protected $parent = NULL;
+	protected $nodes = array();
 
-	public function __construct($name, $value) {
+	public function __construct($par, $name, $value) {
 
-		$data[$name] = $value;		
+		if ($name != NULL && $value != NULL) {
+			$data[$name] = $value;	
+		}
+	
+		$parent = $par;
+	}
 
+	public function addNode($node) {
+		$nodes->add($node);
+	}	
+
+	public function getNode($n) {
+		return $nodes[$n];
 	}
 
 	public function addData($name, $value) {
 		$data[$name] = $value;
 	}	
 
-	public function getNode($n) {
+	public function getData($n) {
 		return $data[$n];
 	}
 
-	public function getNodeWithName($n) {
+	public function getDataWithName($n) {
 		return $data[$n];
 	}	
 }
