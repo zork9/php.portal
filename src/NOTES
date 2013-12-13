@@ -1,2 +1,4 @@
+. svg parser for modding
+
 . webscheme, modification of scheme files to change cgi-bin
 or anything on the PHP server filesystem
