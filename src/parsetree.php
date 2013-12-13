@@ -28,7 +28,7 @@ class ParseTree extends Tree {
 	public function __construct( /* */ ) {
 	}
 
-	public skipWhiteSpace($line, $n) {
+	public function skipWhiteSpace($line, $n) {
 		$i = $n;
 		while ($line[$i] == ' ' || $line[$i] == '\t') {
 			$i++;
@@ -36,7 +36,7 @@ class ParseTree extends Tree {
 		return $i;
 	}  
 
-	public getSubStringN($line, $n) {
+	public function getSubStringN($line, $n) {
 
 		$returnstr = NULL;
 
@@ -45,9 +45,9 @@ class ParseTree extends Tree {
 		}
 
 		return $returnstr;	
+	}
 
-
-	public getNextSubString($line) {
+	public function getNextSubString($line) {
 
 		$returnstr = NULL;
 		$i = skipWhiteSpace($line, 0);
@@ -62,12 +62,12 @@ class ParseTree extends Tree {
 	}
 
 	//utility function with start index
-	public getNextSubStringWithStart($line, $n) {
+	public function getNextSubStringWithStart($line, $n) {
 		return getNextSubStringN($line, $n);
 	}
 
 	//with start index
-	public getNextSubStringN($line, $n) {
+	public function getNextSubStringN($line, $n) {
 
 		$returnstr = NULL;
 		$i = skipWhiteSpace($line, 0);
@@ -80,6 +80,16 @@ class ParseTree extends Tree {
 		return $returnstr;	
 	
 	}
+
+	public function cmpAndYield($operstr, $line) { 
+		////$i = skipWhiteSpace($line, 0);
+		if (strcmp($line, $operstr) >= 0) {
+			return getSubStringN($line, $i + strlen($operstr));
+		} else {
+			return "";
+		}
+	}
+
 }
 
 ?>

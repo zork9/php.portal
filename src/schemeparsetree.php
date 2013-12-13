@@ -39,13 +39,42 @@ class SchemeParseTree extends ParseTree {
 	public function schemeparse($linec) {	
 		$i = 0;		
 		$i = skipWhiteSpace($linec, 2);
-		if (strcmp($linec, "(+") >= 0) {
+		if (cmpAndYield("(+", $linec) != "") {
 			$i = skipWhiteSpace($linec, 2);
 			schemeadd(getSubstringN($linec, $i);
 		}	
+		else if (cmpAndYield("(-", $linec) != "") {
+			$i = skipWhiteSpace($linec, 2);
+			schememinus(getSubstringN($linec, $i);
+		}	
+		else if (cmpAndYield("(*", $linec) != "") {
+			$i = skipWhiteSpace($linec, 2);
+			schememul(getSubstringN($linec, $i);
+		}	
+		else if (cmpAndYield("(/", $linec) != "") {
+			$i = skipWhiteSpace($linec, 2);
+			schemedivide(getSubstringN($linec, $i);
+		}	
 	}
 
-	public function schemeadd($line) {
+	public function schemeadd($subline) {
+		scheme2opertree("+", $subline);
+	}
+
+	public function schememinus($subline) {
+		scheme2opertree("-", $subline);
+	}
+
+	public function schememul($subline) {
+		scheme2opertree("*", $subline);
+	}
+
+	public function schemedivide($subline) {
+		scheme2opertree("/", $subline);
+	}
+
+	//heavy utility function
+	public function scheme2opertree($operstr, $line) {
 		$opnd1 = getNextSubString($line);
 		$opnd2 = getNextSubStringN($line, strlen($opnd1));
 
@@ -55,7 +84,7 @@ class SchemeParseTree extends ParseTree {
 		$tn2 = new TreeNode(); 
 		$tn2->addData("operand2", $opnd2);
 		
-		$self->addNodeRec("plus", $tn1, $tn2);	
+		$self->addNodeRec($operstr, $tn1, $tn2);	
 	}
 	
 }
