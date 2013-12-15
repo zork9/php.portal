@@ -33,7 +33,7 @@ echo 'Here is your edit : <br>';
 echo $_POST["csswritetext"];
 
 //NOTE test 
-writeCSSFile("./test", $_POST["csswritetext"]);
+writeCSSFile($_POST["filename"], $_POST["csswritetext"]);
 
 printBodyHTMLClose();
 
