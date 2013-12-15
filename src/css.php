@@ -33,13 +33,16 @@ $tmp = loadCSSFile($_POST["filename"]);
 echo '<textarea name="csswritetext" form="start" rows="40" cols="50">';
 echo $tmp;
 echo '</textarea>';
+
 echo '<form id="start" method="post" action="cssfirstpass.php">';
 echo '<input type="submit" name="csswritetextsubmit" value="commit">';
 echo '</form>';
+
 echo '<form id="start2" method="post" action="css.php">';
 echo '<input type="name" name="filename">';
 echo '<input type="submit" name="csswritetextsubmit" value="load file">';
 echo '</form>';
+
 /***echo '<button type="button" onclick="">Load</button>'***/ 
 
 printBodyHTMLClose();

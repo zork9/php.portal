@@ -32,6 +32,9 @@ printBodyInit();
 echo 'Here is your edit : <br>';
 echo $_POST["csswritetext"];
 
+//NOTE test 
+writeCSSFile("./test", $_POST["csswritetext"]);
+
 printBodyHTMLClose();
 
 ?>
