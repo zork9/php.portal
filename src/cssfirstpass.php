@@ -26,7 +26,7 @@ include('cssutil.php');
 
 //FIX use JS widgets for changing the look and feel
 
-printHeader();
+printHeader("CSS Test", "<style>" . $_POST["csswritetext"] . "</style>");
 printBodyInit();
 
 echo 'Here is your edit : <br>';

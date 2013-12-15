@@ -33,7 +33,7 @@ function idIs($id, $value)
 
 function printHeader($title, $css)
 {
-	echo "<html><head><title>$title</title></head>"; 
+	echo "<html><head><title>$title</title>$css</head>"; 
 }
 
 function printBodyInit()

@@ -45,6 +45,11 @@ function printInternalCSSClose()
 
 }
 
+//for printing between <style> tags
+function printInternalCSS($contents)
+{
+	echo $contents;
+}
 function loadCSSFile($filename)
 {
 	$fp = fopen($filename, "r");
@@ -56,4 +61,14 @@ function loadCSSFile($filename)
 	return $contents;	
 }
 
+function writeCSSFile($filename, $contents)
+{
+	$fp = fopen($filename, "w+");
+
+	fwrite($fp, $contents);
+	
+	fclose($fp);
+
+	return $contents;	
+}
 ?>
