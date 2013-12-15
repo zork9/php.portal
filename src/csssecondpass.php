@@ -1,6 +1,6 @@
 <?php
 
-/* css page piece */
+/* css page loading a file into the css textarea */
 
 /*
  Copyright (C) Johan Ceuppens 2013
@@ -23,21 +23,14 @@
 <?php
 include('util.php');
 include('cssutil.php');
-include('cssjs.php');
+
 //FIX use JS widgets for changing the look and feel
 
 printHeader();
 printBodyInit();
 
-echo '<textarea name="csswritetext" form="start" rows="40" cols="50"></textarea>';
-echo '<form id="start" method="post" action="cssfirstpass.php">';
-echo '<input type="submit" name="csswritetextsubmit" value="commit">';
-echo '</form>';
-echo '<form id="start2" method="post" action="csssecondpass.php">';
-echo '<input type="name" name="filename">';
-echo '<input type="submit" name="csswritetextsubmit" value="load file">';
-echo '</form>';
-/***echo '<button type="button" onclick="">Load</button>'***/ 
+echo 'Here is your filename to load : <br>';
+echo $_POST["filename"];
 
 printBodyHTMLClose();
 

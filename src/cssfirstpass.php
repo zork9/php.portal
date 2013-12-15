@@ -29,6 +29,7 @@ include('cssutil.php');
 printHeader();
 printBodyInit();
 
+echo 'Here is your edit : <br>';
 echo $_POST["csswritetext"];
 
 printBodyHTMLClose();

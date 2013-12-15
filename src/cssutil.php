@@ -45,4 +45,15 @@ function printInternalCSSClose()
 
 }
 
+function loadCSSFile($filename)
+{
+	$fp = fopen($filename, "r");
+
+	$contents = fread($fp, filesize($filename));
+	
+	fclose($fp);
+
+	return $contents;	
+}
+
 ?>
