@@ -35,12 +35,12 @@ echo $tmp;
 echo '</textarea>';
 
 echo '<form id="start" method="post" action="cssfirstpass.php">';
-echo '<input type="name" name="filename" value="test">';
+echo '<input type="name" name="filename" value="current.css">';
 echo '<input type="submit" name="csswritetextsubmit" value="commit and save">';
 echo '</form>';
 
 echo '<form id="start2" method="post" action="css.php">';
-echo '<input type="name" name="filename" value="test">';
+echo '<input type="name" name="filename" value="current.css">';
 echo '<input type="submit" name="csswritetextsubmit" value="load file">';
 echo '</form>';
 

@@ -22,9 +22,10 @@
 
 <?php
 include('util.php');
+include('cssutil.php');
 include('file.php'); 
 
-printHeader("Open Portal");
+printHeader("Open Portal", "<style>" . loadCSSFile("current.css") . "</style>");
 printBodyInit();
 
 $idgen = 0;

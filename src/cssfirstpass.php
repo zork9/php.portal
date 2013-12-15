@@ -29,10 +29,20 @@ include('cssutil.php');
 printHeader("CSS Test", "<style>" . $_POST["csswritetext"] . "</style>");
 printBodyInit();
 
+session_start();
+$_SESSION["cssstyleinput"] = $_POST["csswritetext"];
+
 echo 'Here is your edit : <br>';
 echo $_POST["csswritetext"];
 
-//NOTE test 
+echo '<br>';
+
+echo 'Go to Open Portal with new Look&Feel : 
+	<form name="gotoportal" id="gotoportal" action="index.php">
+	<input type="submit" id="submit" value="go">
+	</form>';
+
+//NOTE current.css 
 writeCSSFile($_POST["filename"], $_POST["csswritetext"]);
 
 printBodyHTMLClose();
