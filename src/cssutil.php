@@ -25,8 +25,8 @@
 function printExternalCSSHeader($filename)
 {
 
-	echo '<link rel="stylesheet" type-"text/css" href="';
-	echo "$filename";
+	echo '<link rel="stylesheet" type="text/css" href="';
+	echo $filename;
 	echo '">';
 
 }

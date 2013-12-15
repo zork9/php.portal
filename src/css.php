@@ -30,9 +30,9 @@ printHeader();
 printBodyInit();
 
 echo '<form id="start" method="post" action="cssfirstpass.php">';
-echo '<input type="text" name="csswritetext">';
 echo '<input type="submit" name="csswritetextsubmit">';
 echo '</form>';
+echo '<textarea name="csswritetext" form="start" rows="4" cols="50"></textarea>';
 printBodyHTMLClose();
 
 ?>

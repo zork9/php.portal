@@ -21,8 +21,6 @@
 ?>
 
 <?php
-include('util.php');
-include('cssutil.php');
 
 function printEditWidget()
 {
@@ -32,4 +30,5 @@ function printEditWidget()
 
 	echo '</script>';
 }
+
 ?>
