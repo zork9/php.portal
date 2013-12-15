@@ -63,6 +63,11 @@ function loadCSSFile($filename)
 
 function writeCSSFile($filename, $contents)
 {
+	//do not overwrite *.php files
+	if (preg_match("/.*\.php", $filename, $matches)) {
+		return -1;
+	}
+
 	$fp = fopen($filename, "w+");
 
 	fwrite($fp, $contents);
