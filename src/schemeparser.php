@@ -56,9 +56,13 @@ class SchemeParser {
 			$i = skipWhiteSpace($linec, 2);
 			schememul(getSubstringN($linec, $i);
 		}	
-		else if ($tree->cmpAndYield("(/", $linec) != "") {
+		else if ($tree->cmpAndYield("/", $linec) != "") {
 			$i = skipWhiteSpace($linec, 2);
 			schemedivide(getSubstringN($linec, $i);
+		}	
+		else if ($tree->cmpAndYield("if", $linec) != "") {
+			$i = skipWhiteSpace($linec, 2);
+			schemeif(getSubstringN($linec, $i);
 		}	
 	}
 
@@ -78,20 +82,33 @@ class SchemeParser {
 		$tree->scheme2opertree("/", $subline);
 	}
 
+	public function schemeif($subline) {
+		$tree->scheme2if("if", $subline);
+	}
+
 	//heavy utility function
 	public function scheme2opertree($operstr, $line) {
 		$opnd1 = $tree->getNextSubString($line);
 		$opnd2 = $tree->getNextSubStringN($line, strlen($opnd1));
 
 		$tn = new TreeNode(); 
-		$tn->addData("operand1", $opnd1);
+		$tn->addData("operand", $opnd1);
 		
 		$tn2 = new TreeNode(); 
-		$tn2->addData("operand2", $opnd2);
+		$tn2->addData("operand", $opnd2);
 		
 		$tree->addNodeRec($operstr, $tn1, $tn2);	
 	}
-	
-}
+
+	public function scheme2if($ifstr, $line) {
+		$sexpstr = $tree->getNextSexp($line), 
+		$trueclause = $tree->getNextSubStringN($line, strlen($sexpstr)) 	
+		$elseclause = $tree->getNextSubStringN($line, strlen($sexpstr) + strlen($trueclause)); 	
+
+		schemeparse($trueclause);
+		schemeparse($elseclause);
+		//leave this out --FIXME
+		//$tree->addNodeRec3($ifstr, $sexpstr, $trueclause, $elseclause); 
+	}
 
 ?>

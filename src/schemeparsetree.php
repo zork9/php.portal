@@ -94,7 +94,55 @@ class SchemeParseTree extends ParseTree {
 		$currentnode->addNode($tn);
 		//FIX adapt current node hereafter
 	}
-	
+
+	//NOTE adds nodes and sometimes data!
+	public function addNodeRec($operstr, $tn1, $tn2) {
+		//inserts child node and sets data of currentnode
+		$currentnode->addNodeAndData($tn1, $operstr);
+		//inserts second child node, data was set above
+		$currentnode->addNode($tn2);
+	}	
+
+	//NOTE adds nodes !
+	public function addNodeRec3($operstr, $tn1, $tn2, $tn3) {
+		//inserts child node and sets data of currentnode
+		$currentnode->addNodeAndData($tn1, $operstr);
+		//inserts second child node, data was set above
+		$currentnode->addNode($tn2);
+		$currentnode->addNode($tn3);
+	}	
+
+	//NOTE that the sexp is taken from one line of code, so format
+	//it before you use this function
+	public function getNextSexp($line) {
+		$n = 0;
+		$returnstr = NULL;
+		//leave this out so the strlen of the return param works	
+		//$i = skipWhiteSpace($line, 0);
+		for (; $i < strlen($line); $i++) {
+			if ($line[$i] == '(') {
+				$n++;
+				break;
+			}
+		}
+		//$i = skipWhiteSpace($line, 0);
+		for (; $i < strlen($line); $i++) {
+			if ($line[$i] == '(') {
+				$n++;
+			}
+			if ($line[$i] == ')') {
+				if ($n == 0) {
+					break;
+				} else {
+					$n--;
+				}
+			}
+			$returnstr .= $line[$i];
+		}
+
+		return $returnstr;	
+	}
+
 }
 
 ?>

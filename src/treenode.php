@@ -36,10 +36,16 @@ class TreeNode {
 		$parent = $par;
 	}
 
+	//adds a child
 	public function addNode($node) {
 		$nodes->add($node);
 	}	
 
+	//adds a child and inserts metadata of this node
+	public function addNodeAndData($node, $rest) {
+		$nodes->add($node);
+		$data->add($rest);
+	}	
 	public function getNode($n) {
 		return $nodes[$n];
 	}
