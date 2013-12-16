@@ -60,6 +60,10 @@ class SchemeParser {
 			$i = skipWhiteSpace($linec, 2);
 			schemedivide(getSubstringN($linec, $i);
 		}	
+		else if ($tree->cmpAndYield("define", $linec) != "") {
+			$i = skipWhiteSpace($linec, 2);
+			schemedefine(getSubstringN($linec, $i);
+		}	
 		else if ($tree->cmpAndYield("if", $linec) != "") {
 			$i = skipWhiteSpace($linec, 2);
 			schemeif(getSubstringN($linec, $i);
@@ -82,12 +86,22 @@ class SchemeParser {
 		$tree->scheme2opertree("/", $subline);
 	}
 
+	public function schemedefine($subline) {
+		$tree->scheme2opertree("define", $subline);
+	}
+
 	public function schemeif($subline) {
 		$tree->scheme2if("if", $subline);
 	}
 
 	//heavy utility function
 	public function scheme2opertree($operstr, $line) {
+		if (($i = $tree->searchForOpeningParens($line)) < strlen($line)) {
+			$sexpstr = $tree->getNextSexp($line, $i-1); 
+			schemeparse($sexpstr);
+
+			return;
+		} 
 		$opnd1 = $tree->getNextSubString($line);
 		$opnd2 = $tree->getNextSubStringN($line, strlen($opnd1));
 
@@ -100,6 +114,8 @@ class SchemeParser {
 		$tree->addNodeRec($operstr, $tn1, $tn2);	
 	}
 
+	//NOTE on Sexps, there has to be 2 parens in a Sexp, if they are
+	//not you need to not use schemeparse but it should resolve 
 	public function scheme2if($ifstr, $line) {
 		$sexpstr = $tree->getNextSexp($line), 
 		$trueclause = $tree->getNextSubStringN($line, strlen($sexpstr)) 	

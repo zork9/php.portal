@@ -114,7 +114,7 @@ class SchemeParseTree extends ParseTree {
 
 	//NOTE that the sexp is taken from one line of code, so format
 	//it before you use this function
-	public function getNextSexp($line) {
+	public function getNextSexp($line, $i = 0) {
 		$n = 0;
 		$returnstr = NULL;
 		//leave this out so the strlen of the return param works	
