@@ -44,28 +44,37 @@ class SchemeParser {
 		$i = $tree->searchForOpeningParens($linec);
 		$i = $tree->skipWhiteSpace($linec, $i);
 
+		;; Note that everything is not a nested structure,
+		;; The parser searches for Sexp's sometimes
+		$sexpstr = $tree->getNextSexp($linec, $i); 
+		//--FIXME
+		if ($tree->searchForOpeningParens($linec, $i) < ($i + strlen($linec))) 
+		{
+			schemeparse($sexpstr);
+			return; 
+		}
 		if ($tree->cmpAndYield("+", $linec) != "") {
-			$i = skipWhiteSpace($linec, 2);
+			$i = skipWhiteSpace($linec, $i);
 			schemeadd(getSubstringN($linec, $i);
 		}	
 		else if ($tree->cmpAndYield("-", $linec) != "") {
-			$i = skipWhiteSpace($linec, 2);
+			$i = skipWhiteSpace($linec, $i);
 			schememinus(getSubstringN($linec, $i);
 		}	
 		else if ($tree->cmpAndYield("*", $linec) != "") {
-			$i = skipWhiteSpace($linec, 2);
+			$i = skipWhiteSpace($linec, $i);
 			schememul(getSubstringN($linec, $i);
 		}	
 		else if ($tree->cmpAndYield("/", $linec) != "") {
-			$i = skipWhiteSpace($linec, 2);
+			$i = skipWhiteSpace($linec, $i);
 			schemedivide(getSubstringN($linec, $i);
 		}	
 		else if ($tree->cmpAndYield("define", $linec) != "") {
-			$i = skipWhiteSpace($linec, 2);
+			$i = skipWhiteSpace($linec, $i);
 			schemedefine(getSubstringN($linec, $i);
 		}	
 		else if ($tree->cmpAndYield("if", $linec) != "") {
-			$i = skipWhiteSpace($linec, 2);
+			$i = skipWhiteSpace($linec, $i);
 			schemeif(getSubstringN($linec, $i);
 		}	
 	}
