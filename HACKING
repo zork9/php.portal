@@ -1,13 +1,21 @@
 Ideas for hackers and portals :
 -------------------------------
 
-. write a tool for converting bmp or png images to css (blocks)
-. roguelike game
-. tetris game (See draw.php)
-. adventure game
-. tools (yay!) 
+Games:
+=====
 
-. The schemeparsetree is included in schemeparser and has some common functions
+. roguelike game
+. tetris game (see draw.php)
+. adventure game
+
+Tool:
+=====
+
+. write a tool for converting bmp or png images to css (blocks)
+
+Languages:
+==========
+. The schemeparsetree is included in schemeparser and has some common functions (see the files scheme*.php)
 . svg parser for modding
 . program a REPL in HTML -> correct scheme implementation while running
 . webscheme, modification of scheme files to change cgi-bin
