@@ -1,4 +1,0 @@
-. svg parser for modding
-. program a REPL in HTML -> correct scheme implementation while running
-. webscheme, modification of scheme files to change cgi-bin
-or anything on the PHP server filesystem

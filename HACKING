@@ -8,3 +8,7 @@ Ideas for hackers and portals :
 . tools (yay!) 
 
 . The schemeparsetree is included in schemeparser and has some common functions
+. svg parser for modding
+. program a REPL in HTML -> correct scheme implementation while running
+. webscheme, modification of scheme files to change cgi-bin
+or anything on the PHP server filesystem
