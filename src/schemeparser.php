@@ -44,15 +44,17 @@ class SchemeParser {
 		$i = $tree->searchForOpeningParens($linec);
 		$i = $tree->skipWhiteSpace($linec, $i);
 
-		;; Note that everything is not a nested structure,
-		;; The parser searches for Sexp's sometimes
+		// Note that everything is not a nested structure,
+		// The parser searches for Sexp's here 
 		$sexpstr = $tree->getNextSexp($linec, $i); 
+
 		//--FIXME
 		if ($tree->searchForOpeningParens($linec, $i) < ($i + strlen($linec))) 
 		{
 			schemeparse($sexpstr);
 			return; 
 		}
+
 		if ($tree->cmpAndYield("+", $linec) != "") {
 			$i = skipWhiteSpace($linec, $i);
 			schemeadd(getSubstringN($linec, $i);
