@@ -7,3 +7,4 @@ Ideas for hackers and portals :
 . adventure game
 . tools (yay!) 
 
+. The schemeparsetree is included in schemeparser and has some common functions
