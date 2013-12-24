@@ -31,4 +31,27 @@ function printEditWidget()
 	echo '</script>';
 }
 
+function printJSReloadId($id)
+{
+	echo '<script>';
+
+	echo 'document.element.getId($id).reload() ';
+	
+	echo '</script>';
+}
+
+function printJSReloadPage()
+{
+	echo '<script>';
+
+	echo 'document.reload() ';
+	
+	echo '</script>';
+}
+
+function reloadPage()
+{
+	ech	
+
+
 ?>

@@ -36,6 +36,7 @@ function colorizePixel()
 	echo '</script>';
 }
 
+
 class Xpm {
 	public function __construct( /* */ ) {
 	}
