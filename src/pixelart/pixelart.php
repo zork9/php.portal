@@ -37,8 +37,12 @@ printBodyInit();
 $tmppixelcolor = $_POST["pixelcolor"];
 
 echo '<div id="pixelwindow">
-	<div onmousedown="this.style.color="';
-echo "$tmppixelcolor";
+	<div onmousedown="this.style.background="';
+	if (isset($_POST["pixelcolor"])) {
+		echo "$tmppixelcolor";
+	} else {
+		echo "red";
+	}
 echo '"></div>';
 echo '</div>';
 
