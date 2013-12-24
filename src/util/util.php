@@ -21,7 +21,7 @@
 ?>
 
 <?php
-include("./php.portal/src/include.std.php");
+include("../include/root.php");
 
 function idIs($id, $value)
 {

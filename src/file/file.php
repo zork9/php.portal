@@ -20,7 +20,7 @@
 ?>
 
 <?php
-include('/php.portal/src/include/include.std.php');
+include('../include/root.php');
 
 function printArrayToFile($array)
 {

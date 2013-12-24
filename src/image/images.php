@@ -21,7 +21,7 @@
 ?>
 
 <?php
-include('/php.portal/src/include/include.std.php');
+include('../include/root.php');
 include(utilDir("util.php"));
 //FIX Postgressql function also
 function printImagesNamesMySQL($connection)

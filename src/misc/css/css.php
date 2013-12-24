@@ -21,8 +21,11 @@
 ?>
 
 <?php
-include("/php.portal/src/include/include.std.php");
+include("../../include/root.php");
 include(utilDir("util.php"));
+
+echo miscDir("css/cssutil.php");
+
 include(miscDir("css/cssutil.php"));
 include(miscDir("css/cssjs.php"));
 //FIX use JS widgets for changing the look and feel

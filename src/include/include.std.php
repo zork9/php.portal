@@ -22,18 +22,22 @@
 
 <?php
 
-function $SRCROOT = '/php.portal/src/';
+$DOCROOT = $_SERVER['DOCUMENT_ROOT'];
+$SRCROOT = $DOCROOT . "/php.portal/src/";
+session_start();
 
-function cDir($path) { return "$SRCROOT" . "c/" . "$path"; }
-function dbDir($path) { return "$SRCROOT" . "db/" . "$path"; }
-function fileDir($path) { return "$SRCROOT" . "file/" . "$path"; }
-function groupsDir($path) { return "$SRCROOT" . "groups/" . "$path"; }
-function imageDir($path) { return "$SRCROOT" . "image/" . "$path"; }
-function includeDir($path) { return "$SRCROOT" . "include/" . "$path"; }
-function miscDir($path) { return "$SRCROOT" . "misc/" . "$path"; }
-function pixelartDir($path) { return "$SRCROOT" . "pixelart/" . "$path"; }
-function schemeDir($path) { return "$SRCROOT" . "scheme/" . "$path"; }
-function treeDir($path) { return "$SRCROOT" . "tree/" . "$path"; }
-function utilDir($path) { return "$SRCROOT" . "util/" . "$path"; }
+$_SESSION['SRCROOT'] = $SRCROOT;
+
+function cDir($path) { return $_SESSION['SRCROOT'] . "c/" . "$path"; }
+function dbDir($path) { return $_SESSION['SRCROOT'] . "db/" . "$path"; }
+function fileDir($path) { return $_SESSION['SRCROOT'] . "file/" . "$path"; }
+function groupsDir($path) { return $_SESSION['SRCROOT'] . "groups/" . "$path"; }
+function imageDir($path) { return $_SESSION['SRCROOT'] . "image/" . "$path"; }
+function includeDir($path) { return $_SESSION['SRCROOT'] . "include/" . "$path"; }
+function miscDir($path) { return $_SESSION['SRCROOT'] . "misc/" . "$path"; }
+function pixelartDir($path) { return $_SESSION['SRCROOT'] . "pixelart/" . "$path"; }
+function schemeDir($path) { return $_SESSION['SRCROOT'] . "scheme/" . "$path"; }
+function treeDir($path) { return $_SESSION['SRCROOT'] . "tree/" . "$path"; }
+function utilDir($path) { return $_SESSION['SRCROOT'] . "util/" . "$path"; }
 
 ?>

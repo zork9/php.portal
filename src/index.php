@@ -21,11 +21,14 @@
 ?>
 
 <?php
-include('util.php');
-include('cssutil.php');
-include('file.php'); 
+include("include/root.php");
 
-printHeader("Open Portal", "<style>" . loadCSSFile("current.css") . "</style>");
+include(utilDir("util.php"));
+include(miscDir("css/cssutil.php"));
+include(fileDir("file.php")); 
+
+printHeader("Open Portal", "<style>" . loadCSSFile(miscDir("css/current.css")) . "</style>");
+
 printBodyInit();
 
 $idgen = 0;
@@ -35,7 +38,7 @@ function generateId()
 }
 
 //include scripts in body
-include('include.js.php'); 
+include(includeDir("include.js.php")); 
 
 echo '
 <p onmousedown="JSEditPost()">

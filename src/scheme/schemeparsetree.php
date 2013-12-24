@@ -21,7 +21,7 @@
 ?>
 
 <?php
-include("/php.portal/src/include/include.std.php");
+include("../include/root.php");
 include(treeDir("parsetree.php"));
 
 class SchemeParseTree extends ParseTree {

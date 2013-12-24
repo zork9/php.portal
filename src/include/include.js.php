@@ -22,7 +22,7 @@
 
 
 <?php
-include('/php.portal/src/include/include.std.php');
+include('../include/root.php');
 
 echo '<script>
 function JSEditPost(string postvarname, string frontofpage, string pastofpage)

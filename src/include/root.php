@@ -1,6 +1,6 @@
 <?php
 
-/* draw pixel art of XPM file page */
+/* doc root include directives */
 
 /*
  Copyright (C) Johan Ceuppens 2013
@@ -21,15 +21,8 @@
 ?>
 
 <?php
-include("../include/root.php");
-include(utilDir("util.php"));
-include(miscDir("css/cssutil.php"));
-include(miscDir("css/cssjs.php"));
-include('pixelart.util.php');
 
-printHeader("PixelArt Xpm view");
-printBodyInit();
-
-printBodyHTMLClose();
+$DOCROOT = $_SERVER['DOCUMENT_ROOT'];
+include("$DOCROOT" . "/php.portal/src/include/include.std.php") 
 
 ?>
