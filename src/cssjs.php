@@ -22,6 +22,40 @@
 
 <?php
 
+/***
+	Utility Functions
+***/
+
+function docgetId()
+{
+	echo '<script>';
+	echo 'function docgetId (var id) {';
+	echo 'return	document.element.getElementById(id)';
+	echo '}';
+	echo '</script>';
+}
+
+function elgetId()
+{
+	echo '<script>';
+	echo 'function elgetId(var id) {';
+	echo 'return	document.element.getElementById(id)';
+	echo '}';
+	echo '</script>';
+}
+
+function reloadPage()
+{
+	echo '<script>';
+	echo 'function reloadPage() {';
+	echo 'document.reload() ';
+	echo '}';
+	echo '</script>';
+}
+/***
+	JS Functionality
+***/
+
 function printEditWidget()
 {
 	echo '<script>';
@@ -31,27 +65,16 @@ function printEditWidget()
 	echo '</script>';
 }
 
+
+//NOTE needs to load above JS functions echoed in php
 function printJSReloadId($id)
 {
 	echo '<script>';
 
-	echo 'document.element.getId($id).reload() ';
+	echo "elgetId($id).reload()";
 	
 	echo '</script>';
 }
-
-function printJSReloadPage()
-{
-	echo '<script>';
-
-	echo 'document.reload() ';
-	
-	echo '</script>';
-}
-
-function reloadPage()
-{
-	ech	
 
 
 ?>
