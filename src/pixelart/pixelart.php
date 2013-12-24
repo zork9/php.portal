@@ -35,8 +35,8 @@ printHeader("PixelArt Studio",
 	"</style>");
 printBodyInit();
 
-echo '<div onmousedown="this.style.height += 100" id="pixelwindow">
-	<div onmousedown="this.style.height = 20" ></div>
+echo '<div id="pixelwindow">
+	<div onmousedown="this.style.color=\"red\""></div>
 </div>';
 
 printBodyHTMLClose();

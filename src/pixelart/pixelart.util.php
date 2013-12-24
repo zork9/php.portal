@@ -37,6 +37,16 @@ function printJSColorizePixel()
 	echo '</script>';
 }
 
+//alert mouse coords, use onmousedown"show(event)"
+function printJSgetXY()
+{
+	echo '<script>
+function show(event){
+	var x = event.clientX; 
+	var y = event.clientY;
+	alert("X coords: " + x + " Y coords: " + y);
+	} </script>';
+}
 
 class Xpm {
 	public function __construct( /* */ ) {
