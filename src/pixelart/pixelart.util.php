@@ -21,7 +21,7 @@
 ?>
 
 <?php
-include("../include/root.php");
+//include("../include/root.php");
 function colorizePixel()
 {
 	echo '<script>';

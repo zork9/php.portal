@@ -22,11 +22,15 @@
 
 <?php
 include("../include/root.php");
+echo 'foo'; 
 include(utilDir("util.php"));
+echo 'foo';
 include(miscDir("css/cssutil.php"));
+echo 'foo';
 include(miscDir("css/cssjs.php"));
+echo 'foo';
 include('pixelart.util.php');
-
+echo 'foo';
 printHeader("PixelArt Studio", 
 	
 	//CSS link
