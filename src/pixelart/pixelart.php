@@ -34,10 +34,25 @@ printHeader("PixelArt Studio",
 			loadCSSFile("pixelart.start.2.css") . 
 	"</style>");
 printBodyInit();
+$tmppixelcolor = $_POST["pixelcolor"];
 
 echo '<div id="pixelwindow">
-	<div onmousedown="this.style.color=\"red\""></div>
-</div>';
+	<div onmousedown="this.style.color="';
+echo "$tmppixelcolor";
+echo '"></div>';
+echo '</div>';
+
+echo '<form id="changecolor" method="post" action="pixelart.php">';
+echo '<input type="text" name="pixelcolor" value="';
+	if (isset($_POST["pixelcolor"])) {
+		echo "$tmppixelcolor";
+	} else {
+		echo "red";
+	}
+echo '">';
+
+echo '<input type="submit" name="submit" value="change pixel color">';
+echo '</form>';
 
 printBodyHTMLClose();
 
