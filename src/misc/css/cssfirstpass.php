@@ -38,8 +38,8 @@ echo $_POST["csswritetext"];
 
 echo '<br>';
 
-echo 'Go to Open Portal with new Look&Feel : 
-	<form name="gotoportal" id="gotoportal" action="index.php">
+echo 'Exit new without Look&Feel : 
+	<form name="gotoportal" id="gotoportal" <!--FIXME-->action="index.php">
 	<input type="submit" id="submit" value="go">
 	</form>';
 
