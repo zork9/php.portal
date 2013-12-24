@@ -22,7 +22,7 @@
 
 <?php
 //include("../include/root.php");
-function colorizePixel()
+function printJSColorizePixel()
 {
 	echo '<script>';
 

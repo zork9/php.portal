@@ -29,14 +29,14 @@ include('pixelart.util.php');
 printHeader("PixelArt Studio", 
 	
 	//CSS link
-	"<style>" . colorizePixel() . 
+	"<style>" .
 			loadCSSFile("pixelart.start.css") . 
 			loadCSSFile("pixelart.start.2.css") . 
 	"</style>");
 printBodyInit();
 
-echo '<div onclick="colorize(this.children[0])" id="pixelwindow">
-	<div></div>
+echo '<div onmousedown="this.style.height += 100" id="pixelwindow">
+	<div onmousedown="this.style.height = 20" ></div>
 </div>';
 
 printBodyHTMLClose();
