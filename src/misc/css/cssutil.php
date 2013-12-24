@@ -21,7 +21,6 @@
 ?>
 
 <?php
-include("../../include/root.php");
 
 function printExternalCSSHeader($filename)
 {
