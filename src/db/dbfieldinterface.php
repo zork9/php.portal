@@ -1,6 +1,6 @@
 <?php
 
-/* db data (field) structure inherited array functionality */
+/* db functionality */
 
 /*
  Copyright (C) Johan Ceuppens 2013
@@ -22,34 +22,10 @@
 
 <?php
 include('../include/root.php');
-include(dbDir("dbdatabase.php");
 
-class dbData extends dbDataBase
+interface dbFieldInterface
 {
-	public function __construct() {
-
-		$_data = array(); 	
-
-	}
-
-	public function add($key, $value) {
-		$_data[$key] = $value;	
-	}	
-
-	public function get($key) {
-		//return $_data[$key];	
-		return {$_data[$key]};	
-	}
-
-	public function getkey() {
-		//return $_data[0];	
-		return {$_data[0]};	
-	}
-
-	public function getvalue() {
-		//return $_data[1];	
-		return {$_data[1]};	
-	}
-
-	protected $_data;
+	public function addAtom($atom);
+	public function addAtomN($n, $atom);
+	public function addField($fieldrow);
 }	

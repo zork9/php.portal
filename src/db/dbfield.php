@@ -22,11 +22,10 @@
 
 <?php
 include('../include/root.php');
-include(dbDir("dbinterface.php");
+include(dbDir("dbfieldinterface.php");
 include(dbDir("dbdata.php");
-include(dbDir("dbbase.php");
 
-class phpHPdbField implements phpHPdbInterface
+class dbField implements dbFieldInterface 
 {
 	public function __construct() {
 
@@ -34,12 +33,17 @@ class phpHPdbField implements phpHPdbInterface
 
 	}
 
-	public function addAtom($key, $value) {
+	public function addAtom($atom) {
+		array_push($_dbfield[$atom->getkey()], $_dbfield[0]);
+	}	
+
+	public function addAtomN($n, $atom) {
+		array_push($_dbfield[$atom->get($n)], $_dbfield[$n]);
 	}	
 
 	public function addField($fieldrow) {
 
-		array_push($_dbfield, $fieldrow);
+		array_push($fieldrow, $_dbfield);
 
 	}
 

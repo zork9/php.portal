@@ -25,7 +25,12 @@ include('../include/root.php');
 
 interface dbDataInterface
 {
+	//for hashes
 	public function add($key, $value);
 	public function get($key);
+
+	//for tuple with 1 key, 1 value
+	public function getkey();
+	public function getvalue();
 }	
 
