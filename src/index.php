@@ -27,7 +27,7 @@ include(utilDir("util.php"));
 include(miscDir("css/cssutil.php"));
 include(fileDir("file.php")); 
 
-printHeader("Open Portal", "<style>" . loadCSSFile(miscDir("css/current.css")) . "</style>");
+printHeader("Hacker Portal", "<style>" . loadCSSFile(miscDir("css/current.css")) . "</style>");
 
 printBodyInit();
 
@@ -39,15 +39,16 @@ function generateId()
 
 //include scripts in body
 include(includeDir("include.js.php"));
-
-//echo '<h1 onclick="this.innerHTML=\'Ooops!\'">Click on this text!</h1>';
-
 echo '<script>
 	function printinnerHTML() {
 		return \'<form> <input type="text"></form>\';	
 	}
 	</script>';
  
+
+//echo '<h1 onclick="this.innerHTML=\'Ooops!\'">Click on this text!</h1>';
+//echo '<p onclick="this.innerHTML=JSEditPostWithText()">
+
 echo '<p onclick="this.innerHTML=printinnerHTML()">
 		Click this text to Edit</p>';
 
