@@ -41,7 +41,7 @@ function generateId()
 include(includeDir("include.js.php"));
 echo '<script>
 	function printinnerHTML() {
-		return \'<form> <input type="text"></form>\';	
+		return \'<form id="start"> <textarea name="t" form="start" rows="5" cols="20"></textarea></form>\';	
 	}
 	</script>';
  
