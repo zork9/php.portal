@@ -26,6 +26,10 @@ include('../include/root.php');
 interface dbFieldInterface
 {
 	public function addAtom($atom);
-	public function addAtomN($n, $atom);
-	public function addField($fieldrow);
+	//$n can be a string key or number	
+	//inserts on value at pos $n the value of the 2-tuple $atom
+	public function addAtomFieldN($n, $atom);
+	//inserts the mth value of $atom at value on field pos $n
+	public function addAtomNM($n, $m, $atom);
+	public function addField($field);
 }	

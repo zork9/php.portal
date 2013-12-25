@@ -40,6 +40,7 @@ class phpHPdb extends phpHPdbBase
 
 	public function addField($fieldrow) {
 
+		$_dbarray[$fieldrodd
 
 	}
 
