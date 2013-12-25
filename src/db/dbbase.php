@@ -23,19 +23,18 @@
 <?php
 include('../include/root.php');
 include(dbDir("dbinterface.php");
-include(dbDir("dbdata.php");
-include(dbDir("dbbase.php");
-include(dbDir("dbfield.php");
+include(dbDir("dbdatabase.php");
 
-class phpHPdb extends phpHPdbBase 
+class phpHPdbBase implements phpHPdbInterface
 {
 	public function __construct() {
 
-		$_dbarray = array();	
+			
 
 	}
 
 	public function addAtom($key, $value) {
+		
 	}	
 
 	public function addField($fieldrow) {
@@ -43,6 +42,6 @@ class phpHPdb extends phpHPdbBase
 
 	}
 
-	private $_dbarray;
-		
+
+	
 }	

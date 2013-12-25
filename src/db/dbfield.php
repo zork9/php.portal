@@ -25,13 +25,12 @@ include('../include/root.php');
 include(dbDir("dbinterface.php");
 include(dbDir("dbdata.php");
 include(dbDir("dbbase.php");
-include(dbDir("dbfield.php");
 
-class phpHPdb extends phpHPdbBase 
+class phpHPdbField implements phpHPdbInterface
 {
 	public function __construct() {
 
-		$_dbarray = array();	
+		$_dbfield = array();	
 
 	}
 
@@ -40,9 +39,10 @@ class phpHPdb extends phpHPdbBase
 
 	public function addField($fieldrow) {
 
+		array_push($_dbfield, $fieldrow);
 
 	}
 
-	private $_dbarray;
+	private $_dbfield;
 		
 }	

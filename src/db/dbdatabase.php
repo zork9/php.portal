@@ -1,6 +1,6 @@
 <?php
 
-/* db functionality */
+/* db data (field) structure functionality */
 
 /*
  Copyright (C) Johan Ceuppens 2013
@@ -22,27 +22,12 @@
 
 <?php
 include('../include/root.php');
-include(dbDir("dbinterface.php");
-include(dbDir("dbdata.php");
-include(dbDir("dbbase.php");
-include(dbDir("dbfield.php");
+include(dbDir("dbdatainterface.php");
 
-class phpHPdb extends phpHPdbBase 
+class dbDataBase implements dbDataInterface 
 {
 	public function __construct() {
 
-		$_dbarray = array();	
-
 	}
 
-	public function addAtom($key, $value) {
-	}	
-
-	public function addField($fieldrow) {
-
-
-	}
-
-	private $_dbarray;
-		
 }	

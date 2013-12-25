@@ -22,27 +22,10 @@
 
 <?php
 include('../include/root.php');
-include(dbDir("dbinterface.php");
-include(dbDir("dbdata.php");
-include(dbDir("dbbase.php");
-include(dbDir("dbfield.php");
 
-class phpHPdb extends phpHPdbBase 
+interface dbDataInterface
 {
-	public function __construct() {
-
-		$_dbarray = array();	
-
-	}
-
-	public function addAtom($key, $value) {
-	}	
-
-	public function addField($fieldrow) {
-
-
-	}
-
-	private $_dbarray;
-		
+	public function add($key, $value);
+	public function get($key);
 }	
+

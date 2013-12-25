@@ -1,6 +1,6 @@
 <?php
 
-/* db functionality */
+/* db data (field) structure inherited array functionality */
 
 /*
  Copyright (C) Johan Ceuppens 2013
@@ -22,27 +22,24 @@
 
 <?php
 include('../include/root.php');
-include(dbDir("dbinterface.php");
-include(dbDir("dbdata.php");
-include(dbDir("dbbase.php");
-include(dbDir("dbfield.php");
+include(dbDir("dbdatabase.php");
 
-class phpHPdb extends phpHPdbBase 
+class dbData extends dbDataBase
 {
 	public function __construct() {
 
-		$_dbarray = array();	
+		$_data = array(); 	
 
 	}
 
-	public function addAtom($key, $value) {
+	public function add($key, $value) {
+		$_data[$key] = $value;	
 	}	
 
-	public function addField($fieldrow) {
-
-
+	public function get($key) {
+		//return $_data[$key];	
+		return {$_data[$key]};	
 	}
 
-	private $_dbarray;
-		
+	protected $_data;
 }	
