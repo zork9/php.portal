@@ -38,15 +38,22 @@ function generateId()
 }
 
 //include scripts in body
-include(includeDir("include.js.php")); 
+include(includeDir("include.js.php"));
 
-echo '
-<p onmousedown="JSEditPost()">
-	You can write something here when you click this section
-	</p>';
+//echo '<h1 onclick="this.innerHTML=\'Ooops!\'">Click on this text!</h1>';
+
+echo '<script>
+	function printinnerHTML() {
+		return \'<form> <input type="text"></form>\';	
+	}
+	</script>';
+ 
+echo '<p onclick="this.innerHTML=printinnerHTML()">
+		Click this text to Edit</p>';
 
 //FIX generate id for each post on the webpage
 //FIX get number (key/id) of post out of a db
+/******
 echo '
 <p id=\"';
 
@@ -63,7 +70,10 @@ echo	"$idgen";
 echo '
 ")>Click</button>
 </p>
+
+
 ';
+*******/
 
 printBodyAndHTMLClose();
 
