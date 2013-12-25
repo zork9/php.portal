@@ -40,9 +40,9 @@ class phpHPdb extends phpHPdbBase
 		if (count($_dbarray) > 0) {
 			//overruns different size fieldrows
 			while ($i < count($_dbarray) {
-				if (strncmp($_dbarray[getField($i)]->getkey(),
-					$fieldrow[getField($i)]->getkey(),
-					strlen($fieldrow[getField($i)]->getkey()))) {
+				if (strncmp($_dbarray[getField($i)]->get(0),
+					$fieldrow[getField($i)]->get(0),
+					strlen($fieldrow[getField($i)]->get(0)))) {
 					return NULL;		
 				}	
 			}

@@ -34,16 +34,16 @@ class dbField implements dbFieldInterface
 	}
 
 	public function addAtom($atom) {
-		array_push($_dbfield[$atom->getkey()], $_dbfield[0]);
+		array_push($_dbfield[$atom->get(0)], $_dbfield[0]);
 	}	
 
 	//inserts on value at pos $n the value of the 2-tuple $atom
 	public function addAtomFieldN($n, $atom) {
-		array_push($_dbfield[$atom->getkey()], $_dbfield[$n]);
+		array_push($_dbfield[$atom->get(0)], $_dbfield[$n]);
 	}	
 	//inserts the mth value of $atom at value on field pos $n
 	public function addAtomNM($n, $m,  $atom) {
-		array_push($_dbfield[$atom->getkey($m)], $_dbfield[$n]);
+		array_push($_dbfield[$atom->get($m)], $_dbfield[$n]);
 	}	
 
 	public function addField($field) {
