@@ -52,6 +52,10 @@ class dbField implements dbFieldInterface
 
 	}
 
+	public function getFieldN($n) {
+		return $_dbfield[$n];
+	}
+
 	private $_dbfield;
 		
 }	

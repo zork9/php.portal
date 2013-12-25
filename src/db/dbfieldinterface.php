@@ -32,4 +32,5 @@ interface dbFieldInterface
 	//inserts the mth value of $atom at value on field pos $n
 	public function addAtomNM($n, $m, $atom);
 	public function addField($field);
+	public function getFieldN($n);
 }	

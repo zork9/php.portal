@@ -35,13 +35,19 @@ class phpHPdb extends phpHPdbBase
 
 	}
 
-	public function addAtom($key, $value) {
-	}	
-
-	public function addField($fieldrow) {
-
-		$_dbarray[$fieldrodd
-
+	public function addFieldRow($fieldrow) {
+		//check that fields compare in the fieldrow
+		if (count($_dbarray) > 0) {
+			//overruns different size fieldrows
+			while ($i < count($_dbarray) {
+				if (strncmp($_dbarray[getField($i)]->getkey(),
+					$fieldrow[getField($i)]->getkey(),
+					strlen($fieldrow[getField($i)]->getkey()))) {
+					return NULL;		
+				}	
+			}
+		}	
+		array_push($fieldrow, $_dbarray);
 	}
 
 	private $_dbarray;

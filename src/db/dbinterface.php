@@ -25,6 +25,5 @@ include('../include/root.php');
 
 interface phpHPdbInterface
 {
-	public function addAtom($key, $value);
-	public function addField($fieldrow);
+	public function addFieldRow($fieldrow);
 }	
