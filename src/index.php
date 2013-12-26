@@ -29,7 +29,9 @@ include(fileDir("file.php"));
 
 session_start();
 if (isset($_POST['lastedit'])) {
-	$_SESSION['lasteditcurrent'] .= $_POST['lastedit'];
+	$_SESSION['lasteditcurrent'] .= "<p id=\"textpara\">";
+	$_SESSION['lasteditcurrent'] .= $_POST['lastedit']; 
+	$_SESSIOn['lasteditcurrent'] .=	"</p>";
 } else {
 	$_SESSION['lasteditcurrent'] = ""; //read db
 }
