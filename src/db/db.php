@@ -37,16 +37,16 @@ class phpHPdb extends phpHPdbBase
 
 	public function addFieldRow($fieldrow) {
 		//check that fields compare in the fieldrow
-		if (count($_dbarray) > 0) {
 			//overruns different size fieldrows
-			while ($i < count($_dbarray) {
-				if (strncmp($_dbarray[getField($i)]->get(0),
-					$fieldrow[getField($i)]->get(0),
-					strlen($fieldrow[getField($i)]->get(0)))) {
-					return NULL;		
-				}	
-			}
-		}	
+		$i = 0;
+		while ($i < count($_dbarray) {
+			if (strncmp($_dbarray($i)->getFieldN(0)->get(0),
+				$fieldrow->getFieldN(0)->get(0),
+				strlen($fieldrow->getFieldN(0)->get(0)))) {
+				return NULL;		
+			}	
+			$i++;	
+		}
 		array_push($fieldrow, $_dbarray);
 	}
 

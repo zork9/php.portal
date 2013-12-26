@@ -1,6 +1,6 @@
 <?php
 
-/* db functionality */
+/* db field functionality */
 
 /*
  Copyright (C) Johan Ceuppens 2013
