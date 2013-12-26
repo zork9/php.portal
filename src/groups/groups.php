@@ -21,9 +21,36 @@
 ?>
 
 <?php
-include('../include/root.php');
-include(utilDir("util.php"));
-//FIX Postgressql function also
+//include('../include/root.php');
+
+function printGroupArray($a)
+{
+	echo '<table border="1">';
+	$i = 0;
+	foreach ($a as $key=>$value) { 
+		echo '<tr>';
+		echo '<td>';
+			echo $key;
+		echo '</td>';
+		echo '<td>';
+			echo $value;
+		echo '</td>';
+		echo '</tr>';
+	
+		$i++;
+	}
+	echo '</table>';
+}
+
+function printGroup($htmlstr)
+{
+	echo $htmlstr;
+}
+
+//////////////////////////////////////////////////////////
+// mysql & postgresql
+//FIXME Postgressql function also
+/***
 function printGroupNamesMySQL($connection)
 {
 $rows = mysqli_query($connection, "SELECT * FROM Groups");
@@ -38,5 +65,5 @@ echo '
 	</ul>
 	';	
 }
-
+***/
 ?>
