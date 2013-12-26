@@ -25,5 +25,5 @@ include('../include/root.php');
 
 interface phpHPdbInterface
 {
-	public function addFieldRow($fieldrow);
+	public function addTable($tablename, $fieldrows); 
 }	

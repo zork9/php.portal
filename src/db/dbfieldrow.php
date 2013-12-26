@@ -22,24 +22,46 @@
 
 <?php
 include('../include/root.php');
-include(dbDir("dbinterface.php");
+include(dbDir("dbfieldrowinterface.php");
 include(dbDir("dbdata.php");
 include(dbDir("dbbase.php");
 include(dbDir("dbfield.php");
 
-class phpHPdb extends phpHPdbBase 
+class dbFieldRow
 {
 	public function __construct() {
 
-		$_dbarray = array();	
+		$_dbfieldrow = array();	
 
 	}
 
-	public function addTable($tablename, $fieldrows = NULL){ 
-		$d = array ($tablename => $fieldrows);
-		array_push($d, $_dbarray);	
-	}	
+	public function addFieldRow($fieldrow) {
+		//check that fields compare in the fieldrow
+		//overruns different size fieldrows
+		$i = 0;
+		$j = 0;
+		while ($i < count($_dbfieldrow) {
+			while ($j < count($_dbfieldrow) {
+			//the first parameter is the ith field's dbdata key value
+			//the second parameter is the fieldrow's dbdata key value
+			if (strncmp($_dbfieldrow($i)->getFieldN($j)->get(0),
+				$fieldrow->getFieldN($j)->get(0),
+				strlen($fieldrow->getFieldN($j)->get(0)))) {
+				return NULL;//FIXME implement db error codes		
+			} 	
+			$j++;
+			}
+			if (j == count($fieldrow)) {
+				//push the fieldrow onto the db array	
+				array_push($fieldrow, $_dbfieldrow);
+				return 0;	
+			}
+			$j = 0;
+			$i++;
+		}
+		return -1;
+	}
 
-	//this is an array of fieldrows 
-	private $_dbarray;
+	private $_dbfieldrow;
+		
 }	

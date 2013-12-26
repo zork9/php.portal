@@ -22,24 +22,8 @@
 
 <?php
 include('../include/root.php');
-include(dbDir("dbinterface.php");
-include(dbDir("dbdata.php");
-include(dbDir("dbbase.php");
-include(dbDir("dbfield.php");
 
-class phpHPdb extends phpHPdbBase 
+interface dbFieldRowInterface
 {
-	public function __construct() {
-
-		$_dbarray = array();	
-
-	}
-
-	public function addTable($tablename, $fieldrows = NULL){ 
-		$d = array ($tablename => $fieldrows);
-		array_push($d, $_dbarray);	
-	}	
-
-	//this is an array of fieldrows 
-	private $_dbarray;
+	public function addFieldRow($fieldrow);
 }	
