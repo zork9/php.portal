@@ -43,7 +43,7 @@ function printGroupsStyle($bgcolor)
 
 function printGroupArray($a)
 {
-	echo '<table border="1">';
+	echo '<table border="0">';
 	$i = 0;
 	foreach ($a as $key=>$value) { 
 		echo '<tr>';

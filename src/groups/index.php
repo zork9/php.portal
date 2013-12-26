@@ -29,10 +29,10 @@ include(groupsDir("groups.php"));
 
 $a = array('foo' => 'bar', 'bar' => 'baz');
 
-printHeader("Hacker Portal", "<style>" . printGroupsStyle("blue") . "</style>");
+printHeader("Hacker Portal Groups testpage", "<style>" . printGroupsStyle("blue") . "</style>");
 printBodyInit();
 
-echo '<h2>Open Hacker Portal : Groups</h2>';
+echo '<h2>Hacker Portal : Groups testpage</h2>';
 
 printGroupArray($a);
 
