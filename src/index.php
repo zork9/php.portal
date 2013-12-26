@@ -27,9 +27,20 @@ include(utilDir("util.php"));
 include(miscDir("css/cssutil.php"));
 include(fileDir("file.php")); 
 
-printHeader("Hacker Portal", "<style>" . loadCSSFile(miscDir("css/current.css")) . "</style>");
+session_start();
+if (isset($_POST['lastedit'])) {
+	$_SESSION['lasteditcurrent'] .= $_POST['lastedit'];
+} else {
+	$_SESSION['lasteditcurrent'] = ""; //read db
+}
+	
+printHeader("Hacker Portal", "<style>" . loadCSSFile("index.css") . "</style>");
 
 printBodyInit();
+
+echo '<h2>Open Hacker Portal</h2>';
+
+echo $_SESSION['lasteditcurrent'];
 
 $idgen = 0;
 function generateId()
@@ -40,16 +51,21 @@ function generateId()
 //include scripts in body
 include(includeDir("include.js.php"));
 echo '<script>
-	function printinnerHTML() {
-		return \'<form id="start"> <textarea name="t" form="start" rows="5" cols="20"></textarea></form>\';	
+	function printinnerTextarea() {
+		return \'<form id="start2" name="lasteditform2" method="post" action="index.php"> 
+			<textarea name="lastedit2" form="start2" rows="5" cols="20"></textarea>
+			<input type="submit" value="write to page"> 
+			</form>\';	
 	}
 	</script>';
  
+echo '<form id="start" name="lasteditform" method="post" action="index.php"> 
+	<textarea name="lastedit" form="start" rows="5" cols="20"></textarea>
+	<br>
+	<input type="submit" value="write to page"> 
+	</form>';	
 
-//echo '<h1 onclick="this.innerHTML=\'Ooops!\'">Click on this text!</h1>';
-//echo '<p onclick="this.innerHTML=JSEditPostWithText()">
-
-echo '<p onclick="this.innerHTML=printinnerHTML()">
+echo '<p id="textareapara" onclick="this.innerHTML=printinnerTextarea()">
 		Click this text to Edit</p>';
 
 //FIX generate id for each post on the webpage
