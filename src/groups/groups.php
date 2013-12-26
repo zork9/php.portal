@@ -22,6 +22,24 @@
 
 <?php
 //include('../include/root.php');
+function printGroupsDefaultStyle()
+{
+	return 'tr 
+	{
+		background:orange;
+	}';
+
+}
+
+function printGroupsStyle($bgcolor)
+{
+	return "tr 
+	{
+		background:" . $bgcolor
+	. "}";
+
+}
+
 
 function printGroupArray($a)
 {
