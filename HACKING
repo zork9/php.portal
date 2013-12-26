@@ -1,6 +1,10 @@
 Ideas for hackers and portals :
 -------------------------------
 
+. write the db to file when the program exits so it can be reloaded
+. index.php css
+. better name for getdocID in JS and PHP
+
 Games:
 =====
 
