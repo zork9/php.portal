@@ -42,7 +42,7 @@ function splitparagraph($n, $pstr)
 }
 
 session_start();
-if (isset($_POST['lastedit'])) {
+if (isset($_POST['lastedit']) && $_POST['lastedit'] != "") {
 	$_SESSION['lasteditcurrent'] .= "<p id=\"textpara\">";
 	$_SESSION['lasteditcurrent'] .= splitparagraph(40, $_POST['lastedit']); 
 	$_SESSION['lasteditcurrent'] .=	"</p>";
