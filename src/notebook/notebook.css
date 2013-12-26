@@ -17,6 +17,9 @@ left:20px;
 #textpara
 {
 background-color:white;
+border: 2px solid;
+box-shadow: 10px 10px 5px #888888;
+width: 400px;
 }
 
 #textareapara
