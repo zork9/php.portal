@@ -1,9 +1,9 @@
 <?php
 
-/* drawing functionality */
+/* */
 
 /*
- Copyright (C) Johan Ceuppens 2013
+ Copyright (C) Johan Ceuppens 2013-2014
 
  This program is free software: you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -22,35 +22,26 @@
 
 <?php
 include('../include/root.php');
+include('../webpageobjecthook.php');
 
-echo '<html>
-<head>
-<link type="text/css" rel="stylesheet"
-  href="draw.css">
-<script>
-function move(elem) {
- 
-  var left = 0
- 
-  function frame() {
-     
-    left++  // update parameters
-     
-    elem.style.left = left + \'px\' // show frame
+class WebPageObjectHookAPI extends WebPageObjectHook
+{
+	public function __construct(/* void */) {
+	}
 
-    if (left == 300)  // check finish condition
-      clearInterval(id)
-  }
- 
-  var id = setInterval(frame, 10) // draw every 10ms
+	protected $_callback;
+	
+	public function setcallback($cb, $nargs) {
+		$_callback = $cb;
+	}
+
+	public function execute($args) {
+		$tmp = array();
+		foreach ($args as $name => $value)
+			$tmp[$name] = $value;
+		}
+		$_callback($tmp);
+	}	
 }
-</script>
-</head>
- 
-<body>
-<div onclick="move(this.children[0])" class="example_path">
-    <div class="example_block"></div>
-</div>
-</body>
-</html>';
 
+?>

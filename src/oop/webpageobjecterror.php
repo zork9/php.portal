@@ -1,6 +1,6 @@
 <?php
 
-/* drawing functionality */
+/* OO webpage part object */
 
 /*
  Copyright (C) Johan Ceuppens 2013
@@ -21,36 +21,18 @@
 ?>
 
 <?php
-include('../include/root.php');
+include("../include/root.php");
+include("./webpageobjecterrorphpinterface.php");
 
-echo '<html>
-<head>
-<link type="text/css" rel="stylesheet"
-  href="draw.css">
-<script>
-function move(elem) {
- 
-  var left = 0
- 
-  function frame() {
-     
-    left++  // update parameters
-     
-    elem.style.left = left + \'px\' // show frame
+class WebPageObjectError implements WebPageObjectErrorPHPInterface {
 
-    if (left == 300)  // check finish condition
-      clearInterval(id)
-  }
- 
-  var id = setInterval(frame, 10) // draw every 10ms
+	public function __construct( /* */ ) {
+	}
+
+	public subclass_responsability() {
+		echo 'WebObject Error : subclass responsability';
+	}	
+		
 }
-</script>
-</head>
- 
-<body>
-<div onclick="move(this.children[0])" class="example_path">
-    <div class="example_block"></div>
-</div>
-</body>
-</html>';
 
+?>

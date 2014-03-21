@@ -1,6 +1,6 @@
 <?php
 
-/* drawing functionality */
+/* */
 
 /*
  Copyright (C) Johan Ceuppens 2013
@@ -23,34 +23,21 @@
 <?php
 include('../include/root.php');
 
-echo '<html>
-<head>
-<link type="text/css" rel="stylesheet"
-  href="draw.css">
-<script>
-function move(elem) {
- 
-  var left = 0
- 
-  function frame() {
-     
-    left++  // update parameters
-     
-    elem.style.left = left + \'px\' // show frame
+interface WebPageObjectTextInterface 
+{
+	/* get the text */
+	public function get();
+	/* set the text, and return a reference */ 
+	public function set($resultref, $value); 
 
-    if (left == 300)  // check finish condition
-      clearInterval(id)
-  }
- 
-  var id = setInterval(frame, 10) // draw every 10ms
-}
-</script>
-</head>
- 
-<body>
-<div onclick="move(this.children[0])" class="example_path">
-    <div class="example_block"></div>
-</div>
-</body>
-</html>';
+	/* unfold text to string, and return a string reference */
+	public function unfold($resultstringref);
 
+	/* partial unfold */
+	public function partialparse($result); 
+
+	/* grep */
+	public function grep($result, $string);
+	/* egrep */
+	public function egrep($result, $regexp);	
+}	
